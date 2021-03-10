@@ -1,6 +1,9 @@
 import React from 'react'
 import Link from "next/link"
 import Image from "next/image"
+// import { Triangle } from 'react-feather';
+
+
 
 
 const tabs = ["beranda", "profile", "lembaga", "statistik", "publikasi", , "BUMdes", "Letter c", "forum", "pelaporan"]
@@ -8,12 +11,12 @@ const tabs = ["beranda", "profile", "lembaga", "statistik", "publikasi", , "BUMd
 const Navigation = (props) => {
     const [visble, setVisible] = React.useState(false)
     return (
-        <div className="flex-0 flex w-full    flex-col  ">
+        <div className=" flex w-full    flex-col  border-b   ">
 
             <div className="flex    justify-between md:space-x-0 space-x-12 md:p-0 p-2   " style={{ backgroundColor: "#0964CC" }}>
                 <Link href="#" >
 
-                    <Image src="/Home.png" width="200" height="100" priority />
+                    <Image src="/Home.png" width="200" height="80" priority />
 
                 </Link>
                 <div className="  flex flex-wrap space-x-3 items-center  md:pr-5 p-0   " >
@@ -25,6 +28,7 @@ const Navigation = (props) => {
                     </button>
 
 
+
                 </div>
             </div>
 
@@ -33,16 +37,18 @@ const Navigation = (props) => {
 
             <div>
 
-                <ul className=" md:flex   gap-12 hidden     ">
 
+
+                <ul className=" md:flex    hidden   justify-between       ">
 
 
                     {tabs.map(tab =>
 
-                        <a key={tab} className="flex space-x-4 items-center" >
-                            <li className={` text-blue-700 hover:text-blue-300  transition duration-150 bg-white   font-medium cursor-pointer `} > {tab}</li>
-                            <svg className="w-6 h-6 text-blue-700">
-                                <polygon points="225,10 100,210 350,210" />
+                        <a key={tab} className="flex items-center justify-center cursor-pointer   py-3  space-x-2 w-full text-blue-700    hover:bg-blue-700  hover:text-white  " >
+                            <li className={` capitalize text-xl   hover:text-white  transition duration-50   font-medium cursor-pointer `} > {tab}</li>
+
+                            <svg className=" w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                             </svg>
                         </a>
 

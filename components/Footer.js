@@ -39,7 +39,7 @@ const Footer = () => {
                 <p className="">
                     Kategori
                 </p>
-                <div className="  flex flex-wrap  space-x-4 md:space-y-0 space-y-4      " >
+                <div className="  flex flex-wrap  space-x-4 md:space-y-0    " >
 
                     <button className=" p-2 w-40  bg-white text-gray-800 rounded-3xl">
                         Aspirasi
