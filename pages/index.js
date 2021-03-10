@@ -16,7 +16,7 @@ export default function Home() {
 
 
       <nav className="w-full">
-        <Navigation />
+        <Navigation page="beranda" />
       </nav>
 
 
