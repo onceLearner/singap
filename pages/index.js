@@ -28,9 +28,13 @@ export default function Home() {
 
         </div>
 
-        <div className="flex flex-wrap md:space-x-16 mt-4 mb-10 py-6 px-7">
-          <IndexMain />
-          <IndexSide />
+        <div className="flex flex-wrap md:space-x-16 mt-4 mb-10 md:py-6  p-4 pl-6">
+          <div className="md:w-7/12">
+            <IndexMain />
+          </div>
+          <div className="md:w-4/12">
+            <IndexSide />
+          </div>
 
 
         </div>

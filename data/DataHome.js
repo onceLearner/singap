@@ -70,3 +70,48 @@ export const DataTerbaruAgen = [
 
 
 
+
+
+export const DataSideTerpo = [
+    {
+
+        title: "Lorem ipusem dolor sitt amet, consectetur adipscing elt,",
+        date: "14 Februari 2021 10:40",
+
+        views: 103,
+
+        imgUrl: "/sideMan.png"
+    },
+    {
+
+        title: "Lorem ipusem dolor sitt amet, consectetur adipscing elt,",
+        date: "14 Februari 2021 10:40",
+
+        views: 103,
+        imgUrl: "/sideMan.png"
+    },
+    {
+
+        title: "Lorem ipusem dolor sitt amet, consectetur adipscing elt,",
+        date: "14 Februari 2021 10:40",
+
+        views: 103,
+        imgUrl: "/sideMan.png"
+    },
+    {
+
+        title: "Lorem ipusem dolor sitt amet, consectetur adipscing elt,",
+        date: "14 Februari 2021 10:40",
+
+        views: 103,
+        imgUrl: "/sideMan.png"
+    },
+    {
+
+        title: "Lorem ipusem dolor sitt amet, consectetur adipscing elt,",
+        date: "14 Februari 2021 10:40",
+
+        views: 103,
+        imgUrl: "/sideMan.png"
+    },
+]

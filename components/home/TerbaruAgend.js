@@ -4,7 +4,7 @@ import { Clock, User } from "react-feather"
 
 const TerbaruAgend = ({ data }) => {
     return (
-        <div className="flex flex-col p-5 w-80 space-y-2 cursor-pointer hover:opacity-80 transition-opacity duration-150   justify-around shadow-lg rounded-xl" >
+        <div className="flex flex-col p-5 md:w-80 w-full  space-y-2 cursor-pointer hover:opacity-80 transition-opacity duration-150   justify-around shadow-lg rounded-xl" >
             <Image src={data.imgUrl} width="300" height="200" />
             <h2 className="text-xl  font-bold  text-bold ">{data.title}</h2>
 

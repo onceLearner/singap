@@ -10,7 +10,7 @@ const TerbaruPub = ({ data }) => {
                 <h2 className="text-base  text-gray-700 text-bold ">{data.text} </h2>
                 <p className="md:text-ms  text-gray-400 text-xs">{data.username}</p>
             </div>
-            <p className="text-gray-400 text-xs md:text-sm">{data.dateAgo}</p>
+            <p className="text-gray-400 text-sm">{data.dateAgo}</p>
 
         </div>
     )
