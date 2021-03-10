@@ -43,3 +43,30 @@ export const DataTerbaruPub = [
     },
 
 ]
+
+
+export const DataTerbaruAgen = [
+    {
+
+        title: "lorem ipsum Dolor",
+
+        text: "Do esse voluptate ullamco pariatur anim culpa nisi esse aute sit qui officia ut ad. Aliquip ea incididunt culpa magna aliqua. ",
+        imgUrl: "/cabineImg.png"
+    },
+    {
+        title: "lorem ipsum Dolor",
+        text: "Do esse voluptate ullamco pariatur anim culpa nisi esse aute sit qui officia ut ad. Aliquip ea incididunt culpa magna aliqua.",
+
+        imgUrl: "/cabineImg.png"
+    }
+    ,
+    {
+        title: "lorem ipsum Dolor",
+        text: "Do esse voluptate ullamco pariatur anim culpa nisi esse aute sit qui officia ut ad. Aliquip ea incididunt culpa magna aliqua.",
+
+        imgUrl: "/cabineImg.png"
+    }
+]
+
+
+

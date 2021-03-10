@@ -1,5 +1,6 @@
 import React from 'react'
-import { DataTerbaruBer, DataTerbaruPub } from "../data/DataHome"
+import { DataTerbaruAgen, DataTerbaruBer, DataTerbaruPub } from "../data/DataHome"
+import TerbaruAgend from './home/TerbaruAgend'
 import TerbaruBer from './home/TerbaruBer'
 import TerbaruPub from './home/TerbaruPub'
 
@@ -32,8 +33,8 @@ const IndexMain = () => {
             <div className="Section3 flex flex-col  space-y-10 items-start">
                 <h2 className="text-4xl font-bold uppercase px-2 border-l-4 border-blue-800">Berita Agenda</h2>
                 <div className="flex flex-wrap  md:space-x-10  justify-around">
-                    {DataTerbaruBer.map(item => (
-                        <TerbaruBer data={item} />
+                    {DataTerbaruAgen.map(item => (
+                        <TerbaruAgend data={item} />
                     ))
                     }
                 </div>

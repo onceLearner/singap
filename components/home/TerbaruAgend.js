@@ -1,15 +1,15 @@
 import React from 'react'
 import Image from "next/image"
-import { Clock } from "react-feather"
+import { Clock, User } from "react-feather"
 
-const TerbaruAgend = () => {
+const TerbaruAgend = ({ data }) => {
     return (
-        <div className="flex flex-col p-3" >
-            <Image src="/cabineImg.png" width="300" height="200" />
-            <div>
-                <span> <Clock className="w-4 h-4 text-gray-400" />  </span>
+        <div className="flex flex-col p-5 w-80 space-y-2 cursor-pointer hover:opacity-80 transition-opacity duration-150   justify-around shadow-lg rounded-xl" >
+            <Image src={data.imgUrl} width="300" height="200" />
+            <h2 className="text-xl  font-bold  text-bold ">{data.title}</h2>
 
-            </div>
+            <p className="text-sm  font-medium">{data.text}</p>
+
 
 
         </div>
@@ -17,4 +17,3 @@ const TerbaruAgend = () => {
 }
 
 export default TerbaruAgend
-
