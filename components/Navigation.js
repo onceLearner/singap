@@ -21,11 +21,13 @@ const Navigation = (props) => {
                 </Link>
                 <div className="  flex flex-wrap space-x-3 items-center  md:pr-5 p-0   " >
                     <button className=" p-2  px-6    font-semibold  text-gray-100 rounded-3xl">
-                        Aspirasi
+                        Masuk
                     </button>
-                    <button className="p-2  px-6  border border-gray-100 text-gray-100 rounded-3xl">
-                        Bspirami
-                    </button>
+                    <Link href="/layanan/registrasi">
+                        <button className="p-2  px-6  border border-gray-100 text-gray-100 rounded-3xl">
+                            Registrari
+                          </button>
+                    </Link>
 
 
 
