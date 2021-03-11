@@ -20,8 +20,8 @@ const Registrari = () => {
 
 
             <main className="flex-1 flex flex-col items-center  my-6   md:px-10">
-                <h2 className="text-4xl font-semibold">Daftar Sekarang </h2>
-                <div className=" w-full md:w-3/6 md:p-8 border border-red-600">
+                <h2 className="text-4xl font-semibold py-6">Daftar Sekarang </h2>
+                <div className=" w-full md:w-3/6 md:p-8 ">
                     <Formik
                         initialValues={{ email: '', password: '' }}
                         validate={values => {

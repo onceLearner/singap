@@ -10,6 +10,9 @@ const tabs = ["beranda", "profile", "lembaga", "statistik", "publikasi", , "BUMd
 
 const Navigation = (props) => {
     const [visble, setVisible] = React.useState(false)
+
+
+
     return (
         <div className=" flex w-full    flex-col  border-b   ">
 
@@ -20,7 +23,7 @@ const Navigation = (props) => {
 
                 </Link>
                 <div className="  flex flex-wrap space-x-3 items-center  md:pr-5 p-0   " >
-                    <button className=" p-2  px-6    font-semibold  text-gray-100 rounded-3xl">
+                    <button onClick={() => props.setModalVisible(true)} className=" p-2  px-6    font-semibold  text-gray-100 rounded-3xl">
                         Masuk
                     </button>
                     <Link href="/layanan/registrasi">

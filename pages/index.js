@@ -1,12 +1,20 @@
+import React, { useEffect } from "react"
 import Head from 'next/head'
 import Image from "next/image"
 import Footer from '../components/Footer'
 import IndexMain from '../components/IndexMain'
 import IndexSide from '../components/IndexSide'
+import LoginModal from '../components/loginModal'
 import Navigation from '../components/Navigation'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [modalVisible, setModalVisible] = React.useState(false)
+
+  useEffect(() => {
+    console.log(modalVisible)
+  }, [modalVisible])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,8 +24,11 @@ export default function Home() {
 
 
       <nav className="w-full">
-        <Navigation page="beranda" />
+        <Navigation setModalVisible={setModalVisible} page="beranda" />
       </nav>
+      {modalVisible &&
+        <LoginModal setModalVisible={setModalVisible} />
+      }
 
 
 
