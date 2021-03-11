@@ -2,6 +2,21 @@ import React from 'react'
 import { DataTerbaruBer } from '../../data/DataHome'
 import { Clock, User } from "react-feather"
 
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    HatenaShareButton,
+    InstapaperShareButton,
+
+    FacebookIcon,
+    WhatsappShareButton,
+    WhatsappIcon,
+    TwitterShareButton,
+    TwitterIcon,
+    InstapaperIcon
+
+} from "react-share";
+
 import Head from 'next/head'
 import Image from "next/image"
 import Footer from '../../components/Footer'
@@ -9,8 +24,20 @@ import IndexMain from '../../components/IndexMain'
 import IndexSide from '../../components/IndexSide'
 import Navigation from '../../components/Navigation'
 import styles from '../../styles/Home.module.css'
+import ShareSocial from '../../components/artikel/social';
+import { DataReplies } from '../../data/DataArtikel';
+import ReplyCard from '../../components/artikel/ReplyCard';
+
+let ArticleUrl;
+if (process.browser) ArticleUrl = window.location.href;
+
 
 export const Artikel = ({ article }) => {
+
+
+
+
+
     return (
         <div className={styles.container}>
             <Head>
@@ -46,6 +73,30 @@ export const Artikel = ({ article }) => {
 
                         </p>
 
+                        <ShareSocial ArticleUrl={ArticleUrl} />
+                        <div className="py-4">
+
+                            <div className="flex  space-x-4 md:p-4 w-full mb-8">
+                                <Image className="flex-0" src={"/sideMan.png"} width="100" height="65" objectFit="cover" />
+                                <div className="border flex justify-between px-5 border-gray-300 rounded-lg p-2 flex-1">
+                                    <input className="flex-1 focus:outline-none" type="text" placeholder="tembahtan commentar" />
+                                    <button className="text-blue-400 underline font-semibold flex-0">Kirim</button>
+                                </div>
+                            </div>
+
+
+                            <p className="text-xl font-semibold">{DataReplies.find(dr => dr.article_id == article.article_id).replies.length} Commenties</p>
+                        </div>
+                        <div className="border-t border-gray-400 py-3 ">
+                            {
+                                DataReplies.find(dr => dr.article_id == article.article_id).replies.map(rep => (
+                                    <div>
+                                        <ReplyCard reply={rep} />
+                                    </div>
+                                ))
+                            }
+
+                        </div>
 
                     </div>
                     <div className="md:w-4/12">
@@ -72,7 +123,7 @@ export default Artikel
 
 
 export async function getStaticProps({ params }) {
-    const article = DataTerbaruBer.find(dt => dt.title = params.id);
+    const article = DataTerbaruBer.find(dt => dt.article_id = params.id);
     return {
         props: {
             article
@@ -88,8 +139,8 @@ export async function getStaticPaths() {
 
     return {
         paths: [
-            { params: { id: allArticles[0].title } },
-            { params: { id: allArticles[1].title } }
+            { params: { id: allArticles[0].article_id, } },
+            { params: { id: allArticles[1].article_id, } }
 
         ]
         ,

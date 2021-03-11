@@ -1,5 +1,6 @@
 export const DataTerbaruBer = [
     {
+        article_id: "1",
 
         title: "lorem ipsum Dolor holor",
         date: "14 Februari 2021 10:40",
@@ -8,6 +9,7 @@ export const DataTerbaruBer = [
         text: "Minim ea culpa excepteur consectetur commodo cillum voluptate laborum. Ex commodo do occaecat nulla fugiat est est. Consequat dolore non nisi veniam veniam commodo voluptate dolore. Occaecat labore in exercitation nisi qui aliqua est anim irure consectetur commodo nostrud.Id eu reprehenderit commodo laborum elit quis ullamco nulla ullamco adipisicing duis cupidatat ullamco pariatur. Qui irure anim exercitation magna. Ipsum amet sunt excepteur occaecat est minim officia aliquip consectetur et occaecat. Incididunt labore aute aute eiusmod qui culpa est mollit magna labore veniam adipisicing. Irure labore ut est minim quis nostrud dolor aute. Occaecat sunt fugiat velit esse incididunt exercitation aliquip."
     },
     {
+        article_id: "2",
         title: "lorem ipsum Dolor",
         date: "15 Februari 2021 10:40",
         username: "Marvin S",

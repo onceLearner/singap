@@ -5,7 +5,7 @@ import { Clock, User } from "react-feather"
 
 const TerbaruBer = ({ data }) => {
     return (
-        <Link href={`/artikel/${data.title}`}>
+        <Link href={`/artikel/${data.article_id}`}>
             <div className="flex flex-col p-5 space-y-2 w-full md:w-80 cursor-pointer hover:opacity-80 transition-opacity duration-150   justify-around shadow-lg rounded-xl" >
                 <Image src={data.imgUrl} width="300" height="200" />
                 <h3 className="text-2xl  text-bold ">{data.title}</h3>

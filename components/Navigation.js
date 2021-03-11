@@ -43,14 +43,15 @@ const Navigation = (props) => {
 
 
                     {tabs.map(tab =>
+                        <Link href={`/${tab == "beranda" ? `` : tab}`}>
+                            <a key={tab} className={`flex items-center justify-center cursor-pointer   py-3  space-x-2 w-full ${props.page === tab ? 'text-white   bg-blue-600 ' : 'text-blue-700    hover:bg-blue-700  hover:text-white'}  `}  >
+                                <li className={` capitalize text-xl   hover:text-white  transition duration-50   font-medium cursor-pointer `} > {tab}</li>
 
-                        <a key={tab} className={`flex items-center justify-center cursor-pointer   py-3  space-x-2 w-full ${props.page === tab ? 'text-white   bg-blue-600 ' : 'text-blue-700    hover:bg-blue-700  hover:text-white'}  `}  >
-                            <li className={` capitalize text-xl   hover:text-white  transition duration-50   font-medium cursor-pointer `} > {tab}</li>
-
-                            <svg className=" w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                            </svg>
-                        </a>
+                                <svg className=" w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                </svg>
+                            </a>
+                        </Link>
 
                     )}
 
