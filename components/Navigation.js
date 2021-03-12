@@ -23,23 +23,30 @@ const Navigation = (props) => {
                 <LoginModal setModalVisible={setModalVisible} />
             }
 
-            <div className="flex    justify-between md:space-x-0 space-x-12 md:p-0 p-2   " style={{ backgroundColor: "#0964CC" }}>
+            <div className="flex    items-center justify-between md:space-x-0 space-x-12 md:p-0 p-2   " style={{ backgroundColor: "#0964CC" }}>
                 <Link href="/" >
 
                     <Image src="/Home.png" width="200" className="cursor-pointer" height="80" priority />
 
                 </Link>
-                <div className="  flex flex-wrap space-x-3 items-center  md:pr-5 p-0   " >
-                    <button onClick={() => setModalVisible(true)} className=" p-2  px-6    font-semibold  text-gray-100 rounded-3xl">
+                <div className="  flex flex-wrap  w-full md:w-auto space-x-3 items-center  md:pr-5 p-0   " >
+                    <button onClick={() => setModalVisible(true)} className=" p-2  px-6  md:text-base text-xs   font-semibold  text-gray-100 rounded-3xl">
                         Masuk
                     </button>
                     <Link href="/layanan/registrasi">
-                        <button className="p-2  px-6  border border-gray-100 text-gray-100 rounded-3xl">
+                        <button className="p-2  md:px-6 md:text-base text-xs  border border-gray-100 text-gray-100 rounded-3xl">
                             Registrari
                           </button>
                     </Link>
 
 
+
+
+                </div>
+                <div className="md:hidden cursor-pointer text-gray-50 hover:text-blue-500" onClick={() => setVisible(true)}>
+                    <svg className="h-8 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
 
                 </div>
             </div>
@@ -70,19 +77,14 @@ const Navigation = (props) => {
 
 
                 </ul>
-                <div className="md:hidden cursor-pointer hover:text-red-500" onClick={() => setVisible(true)}>
-                    <svg className="h-5 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
 
-                </div>
                 <div className={visble ? `z-10 absolute bg-white right-0 left-0 top-0 h-full` : `hidden`}>
-                    <p className="p-2 text-red-500 text-lg cursor-pointer " onClick={() => setVisible(false)}>x </p>
-                    <div className="flex flex-col justify-center items-center gap-6">
+                    <p className="p-2   absolute top-0 right-3 text-blue-700  border mt-2  text-xl font-bold  cursor-pointer " onClick={() => setVisible(false)}>x </p>
+                    <div className="flex flex-col justify-center items-center  space-y-6  mt-10 ">
                         {tabs.map(tab =>
 
                             <Link key={tab} href={`/${tab.trim().replace(" ", "")}`} >
-                                <button className={` text-gray-600 hover:text-red-500 focus:outline-none transition duration-150 bg-white  text-base font-medium cursor-pointer ${tab == "Sign In" && `text-red-400  py-2 ring-2 ring-red-400 w-20 rounded-full  `}   `} style={{ fontFamily: "Montserrat" }}> {tab}</button>
+                                <button className={` text-gray-600 border-b hover:text-red-500 focus:outline-none transition duration-150 bg-white  text-base font-medium cursor-pointer ${tab == "Sign In" && `text-red-400  py-2 ring-2 ring-red-400 w-20 rounded-full  `}   `} style={{ fontFamily: "Montserrat" }}> {tab}</button>
                             </Link>
 
                         )}
