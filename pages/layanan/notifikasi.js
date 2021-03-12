@@ -8,7 +8,7 @@ import NotifikasiCard from '../../components/layanan/notifikasiCard'
 const user = { nama: "Naruto", alamat: "dea konoha", nik: "09294980980945", agama: "isla m", jenis: "Laki-laki" }
 
 
-const data = [{
+const dataPemp = [{
     title: "Lorem nulla cillum exercitation laborum in ullamco",
     text: "Dolore veniam reprehenderit pariatur occaecat est consectetur tempor dolum inl .",
     date: "3 jam lalu"
@@ -30,10 +30,19 @@ const data = [{
 }
 
 ]
+const dataResp = [{
+    title: "Lorem nulla cillum exercitation laborum in ullamco",
+    text: "Dolore veniam reprehenderit pariatur occaecat est consectetur tempor dolum inl .",
+    date: "3 jam lalu"
+},
+
+
+]
 
 const Notifikasi = () => {
     const [TypeNotif, setTypeNotif] = useState(0)
     const [sideBarVisible, setSideBarVisible] = useState(false)
+    const [data, setData] = useState(dataPemp)
 
 
     return (
@@ -77,8 +86,8 @@ const Notifikasi = () => {
 
                     <div className="flex  justify-between  px-10 md:px-20 items-center text-2xl font-base w-full border-b border-gray-50 " >
 
-                        <span onClick={() => setTypeNotif(0)} className={TypeNotif == 0 ? `border-b-2 border-blue-700 py-2 cursor-pointer ` : `cursor-pointer  hover:bg-gray-100`}> Pemberitahuan</span>
-                        <span onClick={() => setTypeNotif(1)} className={TypeNotif == 1 ? `border-b-2 border-blue-700 py-2 cursor-pointer ` : `cursor-pointer hover:bg-gray-100`}> Respon</span>
+                        <span onClick={() => { setTypeNotif(0); setData(dataPemp) }} className={TypeNotif == 0 ? `border-b-4 border-blue-700 p-2 cursor-pointer ` : `cursor-pointer  hover:bg-gray-100 p-2 rounded-xl`}> Pemberitahuan</span>
+                        <span onClick={() => { setTypeNotif(1); setData(dataResp) }} className={TypeNotif == 1 ? `border-b-4 border-blue-700 p-2 cursor-pointer ` : `cursor-pointer hover:bg-gray-100 p-2 rounded-xl`}> Respon</span>
                     </div>
 
 
