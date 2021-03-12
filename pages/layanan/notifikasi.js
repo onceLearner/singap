@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Footer from '../../components/Footer'
 import Header from '../../components/layanan/header'
+import NotifikasiCard from '../../components/layanan/notifikasiCard'
 
 const user = { nama: "Naruto", alamat: "dea konoha", nik: "09294980980945", agama: "isla m", jenis: "Laki-laki" }
 
@@ -31,8 +32,9 @@ const data = [{
 ]
 
 const Notifikasi = () => {
-    const [modalVisible, setModalVisible] = useState(false)
+    const [TypeNotif, setTypeNotif] = useState(0)
     const [sideBarVisible, setSideBarVisible] = useState(false)
+
 
     return (
         <div className="flex flex-col   min-h-screen w-full">
@@ -74,8 +76,9 @@ const Notifikasi = () => {
                 <div className="flex flex-col flex-1  space-y-3 mt-16  ">
 
                     <div className="flex  justify-between  px-10 md:px-20 items-center text-2xl font-base w-full border-b border-gray-50 " >
-                        <span className="border-b-2 border-blue-700 py-2"> Pemberitahuan</span>
-                        <span> Respon </span>
+
+                        <span onClick={() => setTypeNotif(0)} className={TypeNotif == 0 ? `border-b-2 border-blue-700 py-2 cursor-pointer ` : `cursor-pointer  hover:bg-gray-100`}> Pemberitahuan</span>
+                        <span onClick={() => setTypeNotif(1)} className={TypeNotif == 1 ? `border-b-2 border-blue-700 py-2 cursor-pointer ` : `cursor-pointer hover:bg-gray-100`}> Respon</span>
                     </div>
 
 
@@ -83,14 +86,7 @@ const Notifikasi = () => {
                     <div className="flex flex-col  md:px-20 px-10 py-8  space-y-4">
                         {
                             data.map(notif => (
-                                <div className="flex flex-wrap justify-start md:space-x-3">
-                                    <div className="flex flex-col  space-y-2 md:w-1/2  ">
-                                        <h3 className="text-lg ">{notif.title}</h3>
-                                        <p className="text-sm ">{notif.text}</p>
-
-                                    </div>
-                                    <span className="text-gray-400">{notif.date}</span>
-                                </div>
+                                <NotifikasiCard notif={notif} />
                             ))
 
                         }
