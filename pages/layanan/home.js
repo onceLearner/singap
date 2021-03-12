@@ -25,8 +25,10 @@ const Home = () => {
 
                 <div className={` ${sideBarVisible ? 'absolute top-0 right-0 left-0 bottom-0  z-40 flex flex-col' : 'hidden'}  md:flex    flex-col flex-0   text-gray-200 md:w-72   `} style={{ backgroundColor: "#0964CC" }}>
 
-                    <h4 className="text-2xl  w-full p-2 px-6 bg-blue-500  mb-1 ">Biodata</h4>
-                    <h3 className="text-2xl   px-6 ">pelayanan </h3>
+                    <h4 className="text-2xl  w-full p-2 px-6 bg-blue-500  mb-1 cursor-pointer ">Biodata</h4>
+                    <Link href="/layanan/layanan" >
+                        <h3 className="text-2xl  py-2  px-6 cursor-pointer hover:bg-blue-600  ">pelayanan </h3>
+                    </Link>
 
                     {
                         arr.map(title => (
@@ -35,6 +37,10 @@ const Home = () => {
                             </span>
                         ))
                     }
+
+                    <Link href="/layanan/notifikasi" >
+                        <h3 className="text-2xl   py-2 mt-4 px-6 cursor-pointer hover:bg-blue-600  ">Notifikasi </h3>
+                    </Link>
 
 
                     <div className={` ${sideBarVisible ? 'absolute top-10 right-0  z-50' : 'hidden'}  md:hidden `}>

@@ -46,9 +46,9 @@ const Notifikasi = () => {
                 <div className={` ${sideBarVisible ? 'absolute top-0 right-0 left-0 bottom-0  z-40 flex flex-col' : 'hidden'}  md:flex    flex-col flex-0   text-gray-100 md:w-72   `} style={{ backgroundColor: "#0964CC" }}>
 
                     <Link href="/layanan/home">
-                        <h4 className="text-2xl   p-2 px-6   mb-1 ">Akun Saya</h4>
+                        <h4 className="text-2xl   p-2 px-6   mb-1  cursor-pointer">Akun Saya</h4>
                     </Link>
-                    <h3 className="text-2xl  bg-blue-500 w-full   px-6 py-2 ">Notifikasi </h3>
+                    <h3 className="text-2xl  bg-blue-500 w-full   px-6 py-2  cursor-pointer">Notifikasi </h3>
 
 
 

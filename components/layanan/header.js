@@ -3,6 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 
 const Header = ({ user }) => {
+    const [dropDownModal, setDropDownModal] = React.useState(false)
+
     return (
         <div className="flex justify-between w-full   ">
 
@@ -23,9 +25,18 @@ const Header = ({ user }) => {
 
                     <span className="text-gray-400"> Hallo,</span>
                     <span>{user.nama}!</span>
-                    <button className="transform rotate-90 ">
+                    <button className="transform rotate-90 " onClick={() => setDropDownModal(!dropDownModal)}>
                         {`>`}
                     </button>
+                    {dropDownModal &&
+                        <div className="absolute top-16 right-6 z-10 shadow-2xl  border  w-36  bg-white rounded-3xl  flex flex-col space-y-3">
+                            <button className="hover:bg-gray-100 py-1 rounded-3xl "> Pengaturan</button>
+                            <Link href="/">
+                                <button className="hover:bg-gray-100 py-1 rounded-3xl " > keluar </button>
+                            </Link>
+
+                        </div>
+                    }
                 </div>
 
 
