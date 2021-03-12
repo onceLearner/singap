@@ -6,9 +6,29 @@ import Header from '../../components/layanan/header'
 
 const user = { nama: "Naruto", alamat: "dea konoha", nik: "09294980980945", agama: "isla m", jenis: "Laki-laki" }
 
-const arr = ["surat pengantar    E-KTP", "Surat Pengantar   SKCK", "Surat Pengantar KIA", "Akta Kelahiran ", "Akta Kematian", "Surat Keterangan Keluar Masuk Desa", "SKTM", "Pengantar Nikah"]
 
+const data = [{
+    title: "Lorem nulla cillum exercitation laborum in ullamco",
+    text: "Dolore veniam reprehenderit pariatur occaecat est consectetur tempor dolum inl .",
+    date: "3 jam lalu"
+},
+{
+    title: "Lorem nulla cillum exercitation laborum in ullamco",
+    text: "Dolore veniam reprehenderit pariatur occaecat est consectetur tempor dolum inl .",
+    date: "3 jam lalu"
+},
+{
+    title: "Lorem nulla cillum exercitation laborum in ullamco",
+    text: "Dolore veniam reprehenderit pariatur occaecat est consectetur tempor dolum inl .",
+    date: "3 jam lalu"
+},
+{
+    title: "Lorem nulla cillum exercitation laborum in ullamco",
+    text: "Dolore veniam reprehenderit pariatur occaecat est consectetur tempor dolum inl .",
+    date: "3 jam lalu"
+}
 
+]
 
 const Notifikasi = () => {
     const [modalVisible, setModalVisible] = useState(false)
@@ -23,18 +43,14 @@ const Notifikasi = () => {
 
             <main className="flex-1 flex h-screen     ">
 
-                <div className={` ${sideBarVisible ? 'absolute top-0 right-0 left-0 bottom-0  z-40 flex flex-col' : 'hidden'}  md:flex    flex-col flex-0   text-gray-200 md:w-72   `} style={{ backgroundColor: "#0964CC" }}>
+                <div className={` ${sideBarVisible ? 'absolute top-0 right-0 left-0 bottom-0  z-40 flex flex-col' : 'hidden'}  md:flex    flex-col flex-0   text-gray-100 md:w-72   `} style={{ backgroundColor: "#0964CC" }}>
 
-                    <h4 className="text-2xl  w-full p-2 px-6 bg-blue-500  mb-1 ">Biodata</h4>
-                    <h3 className="text-2xl   px-6 ">pelayanan </h3>
+                    <Link href="/layanan/home">
+                        <h4 className="text-2xl   p-2 px-6   mb-1 ">Akun Saya</h4>
+                    </Link>
+                    <h3 className="text-2xl  bg-blue-500 w-full   px-6 py-2 ">Notifikasi </h3>
 
-                    {
-                        arr.map(title => (
-                            <span className="text-sm pt-2 justify-start px-10 ">
-                                {title}
-                            </span>
-                        ))
-                    }
+
 
 
                     <div className={` ${sideBarVisible ? 'absolute top-10 right-0  z-50' : 'hidden'}  md:hidden `}>
@@ -55,35 +71,31 @@ const Notifikasi = () => {
 
 
 
-                <div className="flex flex-col flex-1  items-center space-y-3 mt-10   ">
-                    <div>
-                        <Image src="/sideMan.png" width="150" height="150" className="rounded-full mb-10 mt-4" />
+                <div className="flex flex-col flex-1  space-y-3 mt-16  ">
+
+                    <div className="flex  justify-between  px-10 md:px-20 items-center text-2xl font-base w-full border-b border-gray-50 " >
+                        <span className="border-b-2 border-blue-700 py-2"> Pemberitahuan</span>
+                        <span> Respon </span>
                     </div>
-                    <div className="flex flex-col w-full md:w-80 space-y-3 px-3 ">
-                        <div className="flex justify-between ">
-                            <label >Nama Lengkap </label>
-                            <span>{user.nama}</span>
-                        </div>
 
-                        <div className="flex justify-between">
-                            <label >Alamat </label>
-                            <span>{user.alamat}</span>
-                        </div>
 
-                        <div className="flex justify-between">
-                            <label >Nik </label>
-                            <span>{user.nik}</span>
-                        </div>
 
-                        <div className="flex justify-between">
-                            <label >Agama </label>
-                            <span>{user.agama}</span>
-                        </div>
+                    <div className="flex flex-col  md:px-20 px-10 py-8  space-y-4">
+                        {
+                            data.map(notif => (
+                                <div className="flex flex-wrap justify-start md:space-x-3">
+                                    <div className="flex flex-col  space-y-2 md:w-1/2  ">
+                                        <h3 className="text-lg ">{notif.title}</h3>
+                                        <p className="text-sm ">{notif.text}</p>
 
-                        <div className="flex justify-between">
-                            <label >Jenis Kelamiin</label>
-                            <span>{user.jenis}</span>
-                        </div>
+                                    </div>
+                                    <span className="text-gray-400">{notif.date}</span>
+                                </div>
+                            ))
+
+                        }
+
+
                     </div>
 
 
