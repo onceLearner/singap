@@ -1,20 +1,27 @@
 import React from 'react'
 import Link from "next/link"
 import Image from "next/image"
+import LoginModal from './loginModal'
 // import { Triangle } from 'react-feather';
 
 
 
 
-const tabs = ["beranda", "profile", "lembaga", "statistik", "publikasi", , "BUMdes", "Letter c", "forum", "pelaporan"]
+const tabs = ["beranda", "profile", "lembaga", "pelayanan", "statistik", "publikasi", , "BUMdes", "Letter c", "forum", "pelaporan"]
 
 const Navigation = (props) => {
     const [visble, setVisible] = React.useState(false)
+
+    const [modalVisible, setModalVisible] = React.useState(false)
+
 
 
 
     return (
         <div className=" flex w-full    flex-col  border-b   ">
+            {modalVisible &&
+                <LoginModal setModalVisible={setModalVisible} />
+            }
 
             <div className="flex    justify-between md:space-x-0 space-x-12 md:p-0 p-2   " style={{ backgroundColor: "#0964CC" }}>
                 <Link href="/" >
@@ -23,7 +30,7 @@ const Navigation = (props) => {
 
                 </Link>
                 <div className="  flex flex-wrap space-x-3 items-center  md:pr-5 p-0   " >
-                    <button onClick={() => props.setModalVisible(true)} className=" p-2  px-6    font-semibold  text-gray-100 rounded-3xl">
+                    <button onClick={() => setModalVisible(true)} className=" p-2  px-6    font-semibold  text-gray-100 rounded-3xl">
                         Masuk
                     </button>
                     <Link href="/layanan/registrasi">

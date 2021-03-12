@@ -9,11 +9,7 @@ import Navigation from '../components/Navigation'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const [modalVisible, setModalVisible] = React.useState(false)
 
-  useEffect(() => {
-    console.log(modalVisible)
-  }, [modalVisible])
 
   return (
     <div className={styles.container}>
@@ -24,11 +20,8 @@ export default function Home() {
 
 
       <nav className="w-full">
-        <Navigation setModalVisible={setModalVisible} page="beranda" />
+        <Navigation page="beranda" />
       </nav>
-      {modalVisible &&
-        <LoginModal setModalVisible={setModalVisible} />
-      }
 
 
 
