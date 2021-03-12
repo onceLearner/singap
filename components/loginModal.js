@@ -1,27 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import Image from "next/image"
+import Link from "next/link"
 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 const LoginModal = (props) => {
     return (
-        <div className="" >
+        <div className="flex flex-col items-center" >
 
             <div className="absolute bg-black top-0 bottom-0 left-0 right-0 w-full h-full z-10 opacity-50"> </div>
 
 
-            <div className="absolute  top-20  md:right-20 right-5  md:left-20 left-5   shadow-xl rounded-xl bg-white z-20 p-3 ">
-                <button onClick={() => props.setModalVisible(false)} className=" relative  top-0 left-1/2 px-2 font-bold  border border-red-300 hover:border-red-600 text-red-300"> X</button>
+            <div className="absolute  top-20  w-5/6 md:w-1/2    shadow-xl rounded-xl bg-white z-20 p-3 ">
 
+                <button onClick={() => props.setModalVisible(false)} className="absolute   top-2     right-4   px-2 font-bold  border border-red-300 hover:border-red-600 text-red-300"> X</button>
 
-                <main className=" flex flex-col items-center  my-6   md:px-10">
+                <main className=" flex flex-col items-center  my-6    md:px-10">
                     <h2 className="text-4xl font-semibold py-6">Silahkan login </h2>
                     <span className="text-gray-400">
-                        Sudah memiliki akun ? <span className="underline text-blue-600 font-medium cursor-pointer hover:text-blue-400">Login di sin </span>
+                        Belum punya akun akun ?
+                         <Link href="/layanan/registrasi.js" >
+                            <span className="underline text-blue-600 font-medium cursor-pointer hover:text-blue-400">
+                                Daftar di sini
+                            </span>
+                        </Link>
                     </span>
 
 
-                    <div className=" w-full md:w-3/6 md:p-8 ">
+                    <div className=" w-full  md:p-8 ">
                         <Formik
                             initialValues={{ email: '', password: '' }}
                             validate={values => {

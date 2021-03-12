@@ -3,11 +3,16 @@ import Image from "next/image"
 import Link from "next/link"
 import Footer from '../../components/Footer'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import LoginModal from '../../components/loginModal';
 
 const Registrari = () => {
+    const [modalVisible, setModalVisible] = useState(false)
 
     return (
         <div className="flex flex-col   min-h-screen w-full">
+            {modalVisible &&
+                <LoginModal setModalVisible={setModalVisible} />
+            }
             <div className="flex     justify-between md:space-x-0 space-x-12 md:p-0 p-2   " style={{ backgroundColor: "#0964CC" }}>
 
                 <Link href="/" >
@@ -19,7 +24,7 @@ const Registrari = () => {
             </div>
 
 
-            <main className="flex-1 flex flex-col items-center  my-6   md:px-10">
+            <main className="flex-1 flex flex-col items-center  my-6  px-2  md:px-10">
                 <h2 className="text-4xl font-semibold py-6">Daftar Sekarang </h2>
                 <div className=" w-full md:w-3/6 md:p-8 ">
                     <Formik
@@ -92,7 +97,7 @@ const Registrari = () => {
                                         Submit
                                 </button>
                                     <span className="text-gray-400">
-                                        Sudah memiliki akun ? <span className="underline text-blue-600 font-medium cursor-pointer hover:text-blue-400">Login di sin </span>
+                                        Sudah memiliki akun ? <span onClick={() => setModalVisible(true)} className="underline text-blue-600 font-medium cursor-pointer hover:text-blue-400">Login di sin </span>
                                     </span>
                                 </div>
                             </Form>
