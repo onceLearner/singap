@@ -1,14 +1,17 @@
 import React from 'react'
 import Image from "next/image"
+import Link from "next/link"
 
 const Footer = () => {
     return (
         <div className="  flex flex-wrap space-y-5   items-center  justify-around pb-5 pt-2  text-white w-full" style={{ backgroundColor: "#0964CC" }}>
 
 
-            <div>
-                <Image src="/Home.png" width="200" height="100" />
-            </div>
+            <Link href="/" >
+
+                <Image src="/Home.png" width="200" className="cursor-pointer" height="80" priority />
+
+            </Link>
 
 
 

@@ -19,7 +19,7 @@ const LoginModal = (props) => {
                     <h2 className="text-4xl font-semibold py-6">Silahkan login </h2>
                     <span className="text-gray-400">
                         Belum punya akun akun ?
-                         <Link href="/layanan/registrasi.js" >
+                         <Link href="/layanan/registrasi" >d
                             <span className="underline text-blue-600 font-medium cursor-pointer hover:text-blue-400">
                                 Daftar di sini
                             </span>
