@@ -28,9 +28,12 @@ const Header = ({ user }) => {
                     <button className="transform rotate-90 py-2 px-2 focus:outline-none text-xl font-bold  text-gray-400 hover:text-blue-700 hover:border  " onClick={() => setDropDownModal(!dropDownModal)}>
                         {dropDownModal ? 'x' : `>`}
                     </button>
+
                     {dropDownModal &&
                         <div className="absolute top-16 right-6 z-10 shadow-2xl  border border-gray-100  w-48  bg-white rounded-xl  flex flex-col space-y-1">
-                            <button className="hover:bg-gray-100 py-1 rounded-3xl "> Pengaturan</button>
+                            <Link href="/layanan/home">
+                                <button className="hover:bg-gray-100 py-1 rounded-3xl "> Pengaturan</button>
+                            </Link>
                             <Link href="/">
                                 <button className="hover:bg-gray-100 py-1 rounded-3xl " > keluar </button>
                             </Link>
