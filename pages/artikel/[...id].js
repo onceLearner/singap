@@ -123,11 +123,15 @@ export default Artikel
 
 
 export async function getStaticProps({ params }) {
-    const article = DataTerbaruBer.find(dt => dt.article_id = params.id);
+
+    const article = DataTerbaruBer.find(dt => dt.article_id = params.id[3]);
     return {
         props: {
             article
-        }
+        },
+
+        // allows us to the ISR= SSR + SSG
+        revalidate: 1,
     }
 
 
@@ -135,14 +139,53 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
 
+
+
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+
+
     const allArticles = DataTerbaruBer;
 
-    return {
-        paths: [
-            { params: { id: allArticles[0].article_id, } },
-            { params: { id: allArticles[1].article_id, } }
+    const paths = []
 
-        ]
+    allArticles.forEach(art => {
+        let date = new Date(art.date);
+
+
+        let route = {
+            year: date.getFullYear().toString(),
+            month: monthNames[date.getMonth()],
+            day: date.getDate().toString(),
+            art_id: art.article_id
+        }
+
+
+
+        paths.push({
+            params: {
+
+                id: [
+                    route.year,
+                    route.month,
+                    route.day,
+                    route.art_id
+                ]
+
+            }
+
+        })
+
+    })
+
+
+
+
+
+    return {
+        paths
         ,
         // temporary
         fallback: false

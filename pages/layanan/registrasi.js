@@ -4,6 +4,21 @@ import Link from "next/link"
 import Footer from '../../components/Footer'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import LoginModal from '../../components/loginModal';
+import axios from "axios"
+import { rightUrl } from '../../utils/methods';
+
+import router from "next/router"
+
+
+
+
+const handleRegister = (data) => {
+
+}
+
+
+
+
 
 const Registrari = () => {
     const [modalVisible, setModalVisible] = useState(false)
@@ -28,31 +43,41 @@ const Registrari = () => {
                 <h2 className="text-4xl font-semibold py-6">Daftar Sekarang </h2>
                 <div className=" w-full md:w-3/6 md:p-8 ">
                     <Formik
-                        initialValues={{ email: '', password: '' }}
+                        initialValues={{ nama: '', alamat: '', nik: "", password: "", agama: "", jenis: "Laki-laki" }}
                         validate={values => {
                             const errors = {};
-                            if (!values.email) {
-                                errors.email = 'Required';
-                            } else if (
-                                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                            ) {
-                                errors.email = 'Invalid email address';
+                            if (!values.nama || !value.nik || !values.agama || !values.jenis || !values.password) {
+                                errors.nama = 'Required';
+                                // or any other checks
                             }
+
                             return errors;
                         }}
                         onSubmit={(values, { setSubmitting }) => {
-                            setTimeout(() => {
-                                alert(JSON.stringify(values, null, 2));
-                                setSubmitting(false);
-                            }, 400);
+
+                            setSubmitting(true)
+                            axios.post(rightUrl("api/signup"), values)
+                                .then(res => {
+                                    if (res.data.token) {
+                                        document.cookie = `usertoken=${res.data.token}`
+                                        router.push("/layanan/home")
+                                    }
+                                    setSubmitting(false)
+
+                                })
+                                .catch(e => console.error(e))
+                            setSubmitting(false)
+
+
+
                         }}
                     >
                         {({ isSubmitting }) => (
                             <Form className="flex flex-col   space-y-5  ">
                                 <div className="flex flex-col space-y-1">
-                                    <label className="capitalize" htmlFor="fullname" >nama Lengkap</label>
-                                    <Field className="p-2 border-b   " type="text" name="fullname" placeholder=" masuka  nama Lengkap" />
-                                    <ErrorMessage className="text-red-600" name="fullname" component="div" />
+                                    <label className="capitalize" htmlFor="nama" >nama Lengkap</label>
+                                    <Field className="p-2 border-b   " type="text" name="nama" placeholder=" masuka  nama Lengkap" />
+                                    <ErrorMessage className="text-red-600" name="nama" component="div" />
 
                                 </div>
 
@@ -67,6 +92,13 @@ const Registrari = () => {
                                     <label className="capitalize" htmlFor="nik" >Nik</label>
                                     <Field className="p-2 border-b   " type="text" name="nik" placeholder="masukan Nik" />
                                     <ErrorMessage className="text-red-600" name="nik" component="div" />
+
+                                </div>
+
+                                <div className="flex flex-col space-y-1">
+                                    <label className="capitalize" htmlFor="password" >password</label>
+                                    <Field className="p-2 border-b   " type="password" name="password" placeholder="masukan password" />
+                                    <ErrorMessage className="text-red-600" name="password" component="div" />
 
                                 </div>
 
@@ -93,9 +125,10 @@ const Registrari = () => {
 
 
                                 <div className=" flex flex-col items-center justify-center space-y-3">
-                                    <button type="submit" className=" w-40 p-2 text-xl md:text-lg bg-blue-600 hover:bg-blue-500   text-gray-50 font-semibold  rounded-3xl" disabled={isSubmitting}>
+                                    <button type="submit" className=" w-40 p-2 text-xl md:text-lg bg-blue-600 hover:bg-blue-500   text-gray-50 font-semibold  rounded-3xl"  >
                                         Submit
                                 </button>
+
                                     <span className="text-gray-400">
                                         Sudah memiliki akun ? <span onClick={() => setModalVisible(true)} className="underline text-blue-600 font-medium cursor-pointer hover:text-blue-400">Login di sin </span>
                                     </span>
@@ -112,7 +145,7 @@ const Registrari = () => {
             <footer className="flex flex-col ">
                 <Footer />
             </footer>
-        </div>
+        </div >
     )
 }
 

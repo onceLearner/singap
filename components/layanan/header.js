@@ -6,21 +6,21 @@ const Header = ({ user }) => {
     const [dropDownModal, setDropDownModal] = React.useState(false)
 
     return (
-        <div className="flex justify-between w-full   ">
+        <div className="flex  w-full  items-center   ">
 
-            <div className="flex    md:w-72    justify-between md:space-x-0 space-x-12 md:p-0 p-2   " style={{ backgroundColor: "#0964CC" }}>
+            <div className="flex    md:w-72     md:space-x-0 space-x-12 md:p-0    " style={{ backgroundColor: "#0964CC" }}>
 
                 <Link href="/" >
 
-                    <Image src="/Home.png" width="200" className="cursor-pointer" height="60" priority />
+                    <Image src="/Home.png" width="200" className="cursor-pointer" height="80" priority />
 
                 </Link>
 
             </div>
 
-            <div className="flex flex-1  h-full  justify-between p-3 mb-4  ">
+            <div className="flex flex-1  h-full  justify-between  mb-4   border-gray-200  ">
                 <span></span>
-                <div className="flex space-x-2  items-center mr-4">
+                <div className="flex space-x-2  items-center mr-4  ">
                     <Image src="/sideMan.png" width="50" height="50" className=" rounded-full" />
 
                     <span className="text-gray-400"> Hallo,</span>
@@ -29,7 +29,8 @@ const Header = ({ user }) => {
                         {dropDownModal ? 'x' : `>`}
                     </button>
 
-                    {dropDownModal &&
+                    {
+                        dropDownModal &&
                         <div className="absolute top-16 right-6 z-10 shadow-2xl  border border-gray-100  w-48  bg-white rounded-xl  flex flex-col space-y-1">
                             <Link href="/layanan/home">
                                 <button className="hover:bg-gray-100 py-1 rounded-3xl "> Pengaturan</button>
