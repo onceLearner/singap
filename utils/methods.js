@@ -12,7 +12,7 @@ export const rightUrl = (ext) => {
         remote: "https://singap.vercel.app/"
     }
 
-    const envRightUrl = process.env.VERCEL_URL ? url.remote : url.local;
+    const envRightUrl = process.env.VERCEL_ENV ? url.remote : url.local;
 
     return `${envRightUrl}${ext}`
 

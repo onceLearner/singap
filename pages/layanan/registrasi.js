@@ -46,7 +46,7 @@ const Registrari = () => {
                         initialValues={{ nama: '', alamat: '', nik: "", password: "", agama: "", jenis: "Laki-laki" }}
                         validate={values => {
                             const errors = {};
-                            if (!values.nama || !valueS.nik || !values.agama || !values.jenis || !values.password) {
+                            if (!values.nama || !values.nik || !values.agama || !values.jenis || !values.password) {
                                 errors.nama = 'Required';
                                 // or any other checks
                             }
